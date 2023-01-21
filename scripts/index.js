@@ -82,6 +82,10 @@ $('#view_account').click(() => {
 			},
 			legend: {
 				position: 'bottom',
+				labels: {
+					boxWidth: 0,
+					fontStyle: 'bold',
+				},
 			},
 		},
 	});
@@ -134,6 +138,10 @@ $('#view_account').click(() => {
 			},
 			legend: {
 				position: 'bottom',
+				labels: {
+					boxWidth: 0,
+					fontStyle: 'bold',
+				},
 			},
 		},
 	});

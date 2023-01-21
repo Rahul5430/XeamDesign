@@ -30,6 +30,7 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
 		/>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 		<script src="./styles/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	</head>
 	<body
@@ -1155,8 +1156,9 @@
 											type="submit"
 											class="btn btn-primary"
 											id="view-graph"
-											data-fancybox="gallery"
-											data-src="./assets/img/chart.png"
+											data-fancybox="dialog"
+											data-src="#graphs"
+											data-preload="true"
 											style="
 												background-color: #1976d2;
 												margin: 0 5px;
@@ -1739,14 +1741,24 @@
 							</div>
 						</div>
 					</div>
+					<div id="graphs" style="display: none; grid-gap: 50px; flex-direction: row;">
+						<div style="width: 600px;">
+							<canvas id="myfirstchart"></canvas>
+						</div>
+						<div style="width: 600px;">
+							<canvas id="mysecondchart"></canvas>
+						</div>
+						<!-- <div style="width: 800px;"><canvas id="acquisitions"></canvas></div> -->
+					</div>
 				</section>
 			</div>
-			<script src="./scripts/index.js"></script>
 			<script src="./scripts//slimscroll.js"></script>
 			<script src="./styles/AdminLTE-2.4.5/dist/js/adminlte.js"></script>
 			<script src="./styles/AdminLTE-2.4.5/dist/js/pages/dashboard.js"></script>
 			<script src="./styles/AdminLTE-2.4.5/dist/js/demo.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+			<script src="./scripts/index.js"></script>
 		</div>
 	</body>
 </html>

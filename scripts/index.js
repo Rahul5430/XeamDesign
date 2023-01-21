@@ -34,3 +34,168 @@ $('#view_account').click(() => {
 		}
 	});
 });
+
+// graph
+// new Morris.Bar({
+// 	element: 'myfirstchart',
+// 	data: [
+// 		{ month: 'Jan', value: 280 },
+// 		{ month: 'Feb', value: 170 },
+// 		{ month: 'Mar', value: 650 },
+// 		{ month: 'Apr', value: 850 },
+// 		{ month: 'May', value: 650 },
+// 		{ month: 'Jun', value: 280 },
+// 		{ month: 'Jul', value: 100 },
+// 		{ month: 'Aug', value: 230 },
+// 		{ month: 'Sep', value: 950 },
+// 		{ month: 'Oct', value: 250 },
+// 		{ month: 'Nov', value: 450 },
+// 		{ month: 'Dec', value: 300 },
+// 	],
+// 	xkey: 'month',
+// 	ykeys: ['value'],
+// 	labels: ['Pre Approval Amount'],
+// 	grid: false,
+// 	gridTextWeight: 'bold',
+// 	resize: true,
+// 	hideHover: true,
+// 	stacked: true,
+// 	barSizeRatio: 0.25,
+// 	barGap: 1,
+// 	inBarValueRightMargin: 1,
+// 	xLabelMargin: 10,
+// });
+
+// new Morris.Bar({
+// 	element: 'mysecondchart',
+// 	data: [
+// 		{ month: 'Jan', value: 280 },
+// 		{ month: 'Feb', value: 170 },
+// 		{ month: 'Mar', value: 650 },
+// 		{ month: 'Apr', value: 850 },
+// 		{ month: 'May', value: 650 },
+// 		{ month: 'Jun', value: 280 },
+// 		{ month: 'Jul', value: 100 },
+// 		{ month: 'Aug', value: 230 },
+// 		{ month: 'Sep', value: 950 },
+// 		{ month: 'Oct', value: 250 },
+// 		{ month: 'Nov', value: 450 },
+// 		{ month: 'Dec', value: 300 },
+// 	],
+// 	xkey: 'month',
+// 	ykeys: ['value'],
+// 	labels: ['Claim Amount'],
+// 	grid: false,
+// 	gridTextWeight: 'bold',
+// 	resize: true,
+// 	hideHover: true,
+// 	stacked: true,
+// 	barSizeRatio: 0.25,
+// 	barGap: 1,
+// 	inBarValueRightMargin: 1,
+// 	xLabelMargin: 10,
+// });
+
+(async function () {
+	const data = [
+		{ month: 'Jan', value: 280 },
+		{ month: 'Feb', value: 170 },
+		{ month: 'Mar', value: 650 },
+		{ month: 'Apr', value: 850 },
+		{ month: 'May', value: 650 },
+		{ month: 'Jun', value: 280 },
+		{ month: 'Jul', value: 100 },
+		{ month: 'Aug', value: 230 },
+		{ month: 'Sep', value: 950 },
+		{ month: 'Oct', value: 250 },
+		{ month: 'Nov', value: 450 },
+		{ month: 'Dec', value: 300 },
+	];
+
+	new Chart(document.getElementById('myfirstchart'), {
+		type: 'bar',
+		data: {
+			labels: data.map((row) => row.month),
+			datasets: [
+				{
+					label: 'Months',
+					data: data.map((row) => row.value),
+					backgroundColor: '#1976d2',
+					borderColor: '#1976d2',
+				},
+			],
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						callback: (value, index, values) => {
+							return `${value}`;
+						},
+					},
+				}],
+			},
+			title: {
+				display: true,
+				text: 'Pre Approval Amount',
+				position: 'left',
+			},
+			legend: {
+				position: 'bottom',
+			},
+		},
+	});
+})();
+
+(async function () {
+	const data = [
+		{ month: 'Jan', value: 280 },
+		{ month: 'Feb', value: 170 },
+		{ month: 'Mar', value: 650 },
+		{ month: 'Apr', value: 850 },
+		{ month: 'May', value: 650 },
+		{ month: 'Jun', value: 280 },
+		{ month: 'Jul', value: 100 },
+		{ month: 'Aug', value: 230 },
+		{ month: 'Sep', value: 950 },
+		{ month: 'Oct', value: 250 },
+		{ month: 'Nov', value: 450 },
+		{ month: 'Dec', value: 300 },
+	];
+
+	new Chart(document.getElementById('mysecondchart'), {
+		type: 'bar',
+		data: {
+			labels: data.map((row) => row.month),
+			datasets: [
+				{
+					label: 'Months',
+					data: data.map((row) => row.value),
+					backgroundColor: '#1976d2',
+					borderColor: '#1976d2',
+				},
+			],
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						callback: (value, index, values) => {
+							return `${value}`;
+						},
+					},
+				}],
+			},
+			title: {
+				display: true,
+				text: 'Claim Amount',
+				position: 'left',
+			},
+			legend: {
+				position: 'bottom',
+			},
+		},
+	});
+})();

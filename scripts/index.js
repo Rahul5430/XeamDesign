@@ -25,7 +25,7 @@ $('.view-more-btn').on('click', function (e) {
 $('#view_account').click(() => {
 	$('.view-account').toggle(() => {
 		console.log($('#view_account').is(':visible'));
-		if ($('#view_account').is(':visible')) {
+		if ($('.view-account').is(':visible')) {
 			$('#view_account').addClass('glyphicon-chevron-up');
 			$('#view_account').removeClass('glyphicon-chevron-down');
 		} else {
@@ -34,67 +34,6 @@ $('#view_account').click(() => {
 		}
 	});
 });
-
-// graph
-// new Morris.Bar({
-// 	element: 'myfirstchart',
-// 	data: [
-// 		{ month: 'Jan', value: 280 },
-// 		{ month: 'Feb', value: 170 },
-// 		{ month: 'Mar', value: 650 },
-// 		{ month: 'Apr', value: 850 },
-// 		{ month: 'May', value: 650 },
-// 		{ month: 'Jun', value: 280 },
-// 		{ month: 'Jul', value: 100 },
-// 		{ month: 'Aug', value: 230 },
-// 		{ month: 'Sep', value: 950 },
-// 		{ month: 'Oct', value: 250 },
-// 		{ month: 'Nov', value: 450 },
-// 		{ month: 'Dec', value: 300 },
-// 	],
-// 	xkey: 'month',
-// 	ykeys: ['value'],
-// 	labels: ['Pre Approval Amount'],
-// 	grid: false,
-// 	gridTextWeight: 'bold',
-// 	resize: true,
-// 	hideHover: true,
-// 	stacked: true,
-// 	barSizeRatio: 0.25,
-// 	barGap: 1,
-// 	inBarValueRightMargin: 1,
-// 	xLabelMargin: 10,
-// });
-
-// new Morris.Bar({
-// 	element: 'mysecondchart',
-// 	data: [
-// 		{ month: 'Jan', value: 280 },
-// 		{ month: 'Feb', value: 170 },
-// 		{ month: 'Mar', value: 650 },
-// 		{ month: 'Apr', value: 850 },
-// 		{ month: 'May', value: 650 },
-// 		{ month: 'Jun', value: 280 },
-// 		{ month: 'Jul', value: 100 },
-// 		{ month: 'Aug', value: 230 },
-// 		{ month: 'Sep', value: 950 },
-// 		{ month: 'Oct', value: 250 },
-// 		{ month: 'Nov', value: 450 },
-// 		{ month: 'Dec', value: 300 },
-// 	],
-// 	xkey: 'month',
-// 	ykeys: ['value'],
-// 	labels: ['Claim Amount'],
-// 	grid: false,
-// 	gridTextWeight: 'bold',
-// 	resize: true,
-// 	hideHover: true,
-// 	stacked: true,
-// 	barSizeRatio: 0.25,
-// 	barGap: 1,
-// 	inBarValueRightMargin: 1,
-// 	xLabelMargin: 10,
-// });
 
 (async function () {
 	const data = [

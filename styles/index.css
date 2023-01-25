@@ -3256,6 +3256,7 @@ td {
 }
 
 .view-account-heading {
+	background: linear-gradient(to right, #00A0FF, #E9304D);
 	background-image: url('../assets/img/header_bg.jpg');
 	background-size: cover;
 	color: white;
@@ -3277,6 +3278,7 @@ td {
 	padding: 7px 10px;
 	width: fit-content;
 	margin: auto;
+	background: linear-gradient(to right, #00A0FF, #E9304D);
 	background-image: url('../assets/img/header_bg.jpg');
 	background-size: cover;
 	color: white;

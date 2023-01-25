@@ -23,8 +23,8 @@ $('.view-more-btn').on('click', function (e) {
 });
 
 $('#view_account').click(() => {
-	$('.view-account').toggle(() => {
-		console.log($('#view_account').is(':visible'));
+	$('.view-account').slideToggle(() => {
+		console.log($('.view-account').is(':visible'));
 		if ($('.view-account').is(':visible')) {
 			$('#view_account').addClass('glyphicon-chevron-up');
 			$('#view_account').removeClass('glyphicon-chevron-down');

@@ -1118,8 +1118,8 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>21321</td>
-														<td>51421</td>
+														<td class="travel-code-cell">21321</td>
+														<td class="claim-code-cell">51421</td>
 														<td>5040</td>
 														<td>Anil Verma</td>
 														<td>Deepak</td>
@@ -1127,8 +1127,8 @@
 													</tr>
 													<tr>
 														<td>2</td>
-														<td>21322</td>
-														<td>51422</td>
+														<td class="travel-code-cell">21322</td>
+														<td class="claim-code-cell">51422</td>
 														<td>6040</td>
 														<td>Anil Verma</td>
 														<td>Deepak</td>
@@ -1136,8 +1136,8 @@
 													</tr>
 													<tr>
 														<td>3</td>
-														<td>21323</td>
-														<td>51423</td>
+														<td class="travel-code-cell">21323</td>
+														<td class="claim-code-cell">51423</td>
 														<td>7040</td>
 														<td>Anil Verma</td>
 														<td>Deepak</td>
@@ -1620,8 +1620,8 @@
 				console.log(col1, col2, col3);
 				$('#travel-code').text(`Travel Purpose Here (${col2})`);
 				$('#claim-code').text(`Claim Code - ${col3}`);
-				$('#travel-status').css('display', 'block');
-				$('#claim-status').css('display', 'block');
+				// $('#travel-status').css('display', 'block');
+				// $('#claim-status').css('display', 'block');
 				if (col1 === '1') {
 					$('.travel-status-date').text('01/01/2023');
 					$('.travel-status-city-from').text('Mohali');
@@ -1635,6 +1635,25 @@
 					$('.travel-status-city-from').text('Ludhiana');
 					$('.travel-status-city-to').text('Amritsar');
 				}
+			});
+
+			$('table#view-more-table td').click(function(e) {
+				console.log('clicked td');
+				console.log($(this).text());
+				var currentRow = $(this).closest('tr');
+				var col1 = currentRow.find('td:eq(0)').html();
+				var col2 = currentRow.find('td:eq(1)').html();
+				var col3 = currentRow.find('td:eq(2)').html();
+				console.log(col1, col2, col3);
+				console.log($(this).attr('class'));
+				if ($(this).attr('class') === 'travel-code-cell') {
+					$('#travel-status').css('display', 'block');
+					$('#claim-status').css('display', 'none');
+				} else if ($(this).attr('class') === 'claim-code-cell') {
+					$('#claim-status').css('display', 'block');
+					$('#travel-status').css('display', 'none');
+				}
+				e.stopPropagation();
 			});
 
 			$('#travel-status-close').click(function() {
